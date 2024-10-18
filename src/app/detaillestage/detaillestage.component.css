@@ -1,0 +1,81 @@
+/* offer-details.component.css */
+.container {
+  max-width: 1000px; /* or any value that fits your design */
+  margin: 500px auto;
+  padding: 200px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 200px auto;
+  background-color: #ffffff;
+  padding: 55px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.offer-header {
+  text-align: center;
+}
+
+.offer-title {
+  color: #0e0408;
+  margin-bottom: 10px;
+}
+
+.offer-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #6c757d;
+}
+
+.offer-details {
+  margin-top: 20px;
+}
+
+.offer-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: Primary;
+  border-bottom: 2px solid #04090e00;
+  padding-bottom: 5px;
+}
+
+.offer-actions {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background-color: #c0afbb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff006a;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+
+
+.main-article {
+  margin-top: 200px; /* Adjust the value based on your header's height */
+}
+.h2{
+  color: Primary;
+}

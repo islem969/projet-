@@ -1,0 +1,103 @@
+<!-- offer-details.component.html >
+
+<div *ngIf="offer" class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="offer-header mb-4">
+        <h2 class="offer-title">{{ offer.nomE }}</h2>
+        <div class="offer-meta">
+          <span class="time text-muted">{{ offer.datePost | date:'yyyy-MM-dd' }} | {{ offer.tecnoligie }}</span>
+          <span class="address"><p class="text-Secondary">Address: {{ offer.adresse }}</p></span>
+        </div>
+      </div>
+
+      <div class="offer-details">
+        <div class="offer-section">
+          <h5 class="section-title text-Secondary">Description:</h5>
+          <p class="text-Secondary">{{ offer.descOffre }}</p>
+        </div>
+
+        <div class="offer-section">
+          <h5 class="section-title text-Secondary">URL De La Sociter:</h5>
+          <p class="text-Secondary">{{ offer.url }}</p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <a class="btn btn-outline-danger" [routerLink]="['/ajoutdemande']">
+          <div>postuler</div>
+          <div><i class="ion-ios-arrow-thin-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="!offer" class="text-center mt-4">
+  <p class="text-danger">Loading...</p>
+</div-->
+
+
+
+
+
+
+<!--article class="article main-article"  *ngIf="offer" >
+  <header>
+    <h1>{{ offer.nomE }}</h1>
+    <ul class="details">
+      <li>{{ offer.datePost | date:'yyyy-MM-dd' }}</li>
+      <li><a>{{ offer.tecnoligie }}</a></li>
+      <li><a href="#">{{ offer.url }}</a></li>
+    </ul>
+    
+  </header>
+  <div class="main">
+    <p> {{ offer.descOffre }}</p>
+    <div class="featured">
+      <figure>
+        <img src="images/news/img01.jpg">
+        <figcaption>Image by pexels.com</figcaption>
+      </figure>
+    </div>
+
+    
+
+    <h4>Profile:</h4>
+    <p>{{ offer.Profile }} </p>
+  
+  </div>
+  <footer>
+   
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <a class="btn btn-outline-danger" [routerLink]="['/ajoutdemande']">
+        <div>postuler</div>
+        <div><i class="ion-ios-arrow-thin-right"></i></div>
+      </a>
+    </div>
+  </footer>
+</article-->
+<article class="article main-article" *ngIf="offer">
+  <header class="text-center">
+    <!-- Center the header content -->
+    <h1>{{ offer.nomE }}</h1>
+   
+      <!-- Center the details content -->
+      <p>{{ offer.datePost | date:'yyyy-MM-dd' }}</p>
+      <p>{{ offer.tecnoligie }}</p>
+      <p><a href="#">{{ offer.url }}</a></p>
+    
+  </header>
+  <div class="text-center">
+    <p>{{ offer.descOffre }}</p>
+    <div class="featured">
+      <div class="d-flex justify-content-center align-items-center">
+        <a class="btn btn-outline-danger" [routerLink]="['/ajoutdemande']">
+          <div>postuler</div>
+          <div><i class="ion-ios-arrow-thin-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

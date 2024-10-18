@@ -1,0 +1,38 @@
+
+<main id="main" class="main">
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <br>
+            <br>
+            <h5 class="card-title text-center">Liste des Demandes</h5>
+          </div>
+  
+          
+
+
+          <!-- Tableau avec les données des universités -->
+          <table class="table table-striped mt-4">
+            <thead>
+              <tr>
+                <th>Lettre De Motivation</th>
+                <th>Demande De Stage</th>
+                <th>Etat De La Demande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let demande of demandes" >
+                <td><a href="assets/{{ demande.lettreMot }}" target="_blank" download>{{ demande.lettreMot }} </a></td>
+                <td><a href="assets/{{ demande.demndeStage }}" target="_blank" download>{{ demande.demndeStage }}</a></td>
+                <td>{{ demande.etat }}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,204 @@
+<!--section class="category">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-left">
+        <div class="row">
+          <div class="col-md-12">         
+            <h1 class="page-title">Les Offres De Stage</h1>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row">
+          <article class="col-md-12 article-list" *ngFor="let offer of offers">
+            <div class="inner">
+              <figure>
+                <a href="single.html">
+                  <img src="assets/images/news/img11.jpg">
+                </a>
+              </figure>
+              <div class="details">
+                <div class="detail">
+                  <div class="category">
+                   <a href="category.html">{{ offer.tecnoligie }}</a>
+                  </div>
+                  <div class="time">{{ offer.datePost | date:'yyyy-MM-dd' }}</div>
+                </div>
+                <h1><a href="single.html">{{ offer.nomE }}</a></h1>
+                <p>
+                  {{ offer.descOffre }}
+                </p>
+                <footer>
+                  <div class="love">
+                    <i class="ion-android-favorite-outline" *ngFor="let _ of [1, 2, 3, 4, 5]" [class.full]="offer.starRating >= _" [class.empty]="offer.starRating < _">
+                     
+                    </i>
+                    <input *ngIf="offer" type="range" min="1" max="5" [(ngModel)]="offer.starRating" (change)="updateRating(offer.idoff, offer.starRating)" />
+                  </div>
+
+                  <!--div class="star-rating">
+                    <span *ngFor="let _ of [1, 2, 3, 4, 5]" 
+                          [class.full]="offer.starRating >= _" 
+                          [class.empty]="offer.starRating  < _"
+                          updateRating(offer.idoff, offer.starRating)
+                          (click)="updateRating(selectedBesoin.besoinId, _)">
+                    </span>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn btn-primary more" [routerLink]="['/app-detaillestage', offer.idoff]">
+                      <div>Details</div>
+                      <div><i class="ion-ios-arrow-thin-right"></i></div>
+                    </a>
+                    <a class="btn btn-success more" [routerLink]="['/ajoutdemande']">
+                      <div>Postuler</div>
+                      <div><i class="ion-ios-arrow-thin-right"></i></div>
+                    </a>
+                  </div>
+                  
+                </footer>
+                
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="category">
+  <div class="container">
+    <div class="row">
+      <!-- Search and Filter -->
+      <aside class="col-md-3">
+        <h2 class="aside-title">Search</h2>
+        <div class="aside-body">
+          <!-- Search Form -->
+          <form>
+            <!-- Search Input -->
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control"   (input)="searchSynonyms()" [(ngModel)]="searchTerm" placeholder="Type something ..." value="hello">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary">
+                    <i class="ion-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Filter Form -->
+          <form class="checkbox-group">
+            <!-- Date Filters -->
+              <div class="form-group">
+                <label><input type="radio" name="date" (change)="filterByDate('anytime')" checked> Anytime</label>
+              </div>
+              <div class="form-group">
+                <label><input type="radio" name="date" (change)="filterByDate('today')"> Today</label>
+              </div>
+              <div class="form-group">
+                <label><input type="radio" name="date" (change)="filterByDate('lastWeek')"> Last Week</label>
+              </div>
+              <div class="form-group">
+                <label><input type="radio" name="date" (change)="filterByDate('lastMonth')"> Last Month</label>
+              </div>
+            <br>
+            <!-- Category Filters -->
+            <div class="group-title">Star Rating</div>
+  <div class="form-group">
+    <label><input type="checkbox" name="rating" (change)="filterByRating(1)"> 1 Star</label>
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" name="rating" (change)="filterByRating(2)"> 2 Stars</label>
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" name="rating" (change)="filterByRating(3)"> 3 Stars</label>
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" name="rating" (change)="filterByRating(4)"> 4 Stars</label>
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" name="rating" (change)="filterByRating(5)"> 5 Stars</label>
+  </div>
+          </form>
+        </div>
+      </aside>
+
+      <!-- Les Offres De Stage -->
+      <div class="col-md-9">
+        <h1 class="page-title">Les Offres De Stage</h1>
+        <div class="line"></div>
+        <div class="row">
+          <!-- Offer Details -->
+          <article class="col-md-12 article-list" *ngFor="let offer of offers">
+            <div class="inner">
+              <figure>
+                <a href="single.html">
+                  <img src="assets/images/news/img11.jpg">
+                </a>
+              </figure>
+              <div class="details">
+                <div class="detail">
+                  <div class="category">
+                   <a href="category.html">{{ offer.tecnoligie }}</a>
+                  </div>
+                  <div class="time">{{ offer.datePost | date:'yyyy-MM-dd' }}</div>
+                </div>
+                <h1><a href="single.html">{{ offer.nomE }}</a></h1>
+                <p>
+                  {{ offer.descOffre }}
+                </p>
+                <footer>
+                  <div class="love">
+                    <i class="ion-android-favorite-outline" *ngFor="let _ of [1, 2, 3, 4, 5]" [class.full]="offer.starRating >= _" [class.empty]="offer.starRating < _">
+                     
+                    </i>
+                    <input *ngIf="offer" type="range" min="1" max="5" [(ngModel)]="offer.starRating" (change)="updateRating(offer.idoff, offer.starRating)" />
+                  </div>
+
+                  <!--div class="star-rating">
+                    <span *ngFor="let _ of [1, 2, 3, 4, 5]" 
+                          [class.full]="offer.starRating >= _" 
+                          [class.empty]="offer.starRating  < _"
+                          updateRating(offer.idoff, offer.starRating)
+                          (click)="updateRating(selectedBesoin.besoinId, _)">
+                    </span>
+                  </div-->
+                  <div class="btn-group">
+                    <a class="btn btn-primary more" [routerLink]="['/app-detaillestage', offer.idoff]">
+                      <div>Details</div>
+                      <div><i class="ion-ios-arrow-thin-right"></i></div>
+                    </a>
+                    <a class="btn btn-success more" [routerLink]="['/ajoutdemande']">
+                      <div>Postuler</div>
+                      <div><i class="ion-ios-arrow-thin-right"></i></div>
+                    </a>
+                  </div>
+                  
+                </footer>
+                
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
